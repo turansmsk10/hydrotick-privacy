@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#074375" />
+  <title>Privacy Policy — HydroTick (Water Tracker)</title>
+  <style>
+    :root {
+      --ocean-top: #0C6DAF;
+      --ocean-mid: #074375;
+      --ocean-deep: #042848;
+      --glass-topbar: rgba(5, 45, 82, 0.72);
+      --glass-hero: rgba(255, 255, 255, 0.11);
+      --glass-card: rgba(255, 255, 255, 0.085);
+      --glass-subtle: rgba(4, 34, 62, 0.36);
+      --glass-inner: rgba(4, 34, 62, 0.44);
+      --border: rgba(255, 255, 255, 0.18);
+      --border-strong: rgba(125, 211, 252, 0.36);
+      --text-primary: #F8FCFF;
+      --text-secondary: #DCEEFF;
+      --text-muted: #A9D3F5;
+      --aqua: #7DD3FC;
+      --aqua-bright: #BAE6FD;
+      --aqua-soft: rgba(125, 211, 252, 0.16);
+      --axolotl: #F9A8D4;
+      --axolotl-soft: rgba(249, 168, 212, 0.14);
+      --shadow: 0 20px 48px rgba(2, 22, 44, 0.38);
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --radius-sm: 11px;
+      --max-w: 880px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 84px;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      background-color: var(--ocean-mid);
+      background-image:
+        radial-gradient(ellipse 80% 50% at 15% 0%, rgba(56, 189, 248, 0.28), transparent 68%),
+        radial-gradient(ellipse 65% 45% at 88% 8%, rgba(249, 168, 212, 0.14), transparent 65%),
+        radial-gradient(circle at 50% 100%, rgba(14, 165, 233, 0.18), transparent 65%),
+        linear-gradient(170deg, var(--ocean-top) 0%, var(--ocean-mid) 48%, var(--ocean-deep) 100%);
+      background-attachment: fixed;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    a {
+      color: var(--aqua-bright);
+      text-decoration: none;
+      transition: color 0.16s ease, opacity 0.16s ease;
+    }
+
+    a:hover {
+      color: #FFFFFF;
+      text-decoration: underline;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--aqua-bright);
+      outline-offset: 2px;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 0.875em;
+      color: #E0F2FE;
+      background: rgba(4, 34, 62, 0.62);
+      border: 1px solid var(--border-strong);
+      padding: 0.12em 0.45em;
+      border-radius: 7px;
+      word-break: break-word;
+    }
+
+    /* Sticky Top Navigation */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      background: var(--glass-topbar);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .topbar-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: linear-gradient(145deg, rgba(14, 116, 186, 0.92) 0%, rgba(7, 67, 117, 0.96) 100%);
+      border: 1px solid var(--border-strong);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      box-shadow: 0 8px 20px rgba(3, 28, 54, 0.36);
+    }
+
+    .brand-text {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      min-width: 0;
+    }
+
+    .brand-name {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+
+    .pkg-badge {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+      color: var(--aqua-bright);
+      background: var(--aqua-soft);
+      border: 1px solid var(--border-strong);
+      padding: 2px 9px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .lang-toggle {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(4, 34, 62, 0.56);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 3px;
+      gap: 2px;
+      flex-shrink: 0;
+    }
+
+    .lang-btn {
+      appearance: none;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      padding: 6px 13px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background-color 0.16s ease, color 0.16s ease, box-shadow 0.16s ease;
+    }
+
+    .lang-btn:hover {
+      color: var(--text-primary);
+    }
+
+    .lang-btn[aria-pressed="true"] {
+      background: linear-gradient(135deg, rgba(125, 211, 252, 0.28), rgba(249, 168, 212, 0.20));
+      color: #FFFFFF;
+      box-shadow: inset 0 0 0 1px var(--border-strong);
+    }
+
+    /* Main Container */
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 36px 20px 64px;
+    }
+
+    /* Hero Card */
+    .hero {
+      background: var(--glass-hero);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.10) 0%, transparent 48%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: -64px;
+      right: -54px;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(249, 168, 212, 0.20) 0%, rgba(125, 211, 252, 0.12) 45%, transparent 72%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--aqua-bright);
+      background: var(--aqua-soft);
+      border: 1px solid var(--border-strong);
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+      position: relative;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(28px, 4vw, 38px);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      position: relative;
+    }
+
+    .hero-subtitle {
+      margin: 0 0 22px;
+      color: var(--text-secondary);
+      font-size: 16.5px;
+      max-width: 68ch;
+      position: relative;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+      position: relative;
+    }
+
+    .meta-item {
+      background: var(--glass-subtle);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+    }
+
+    .meta-label {
+      display: block;
+      font-size: 11.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin-bottom: 2px;
+    }
+
+    .meta-value {
+      display: block;
+      font-size: 14.5px;
+      font-weight: 600;
+      color: var(--text-primary);
+      word-break: break-word;
+    }
+
+    /* Quick Highlights */
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .highlight-card {
+      background: var(--glass-card);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+    }
+
+    .highlight-title {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--aqua-bright);
+      margin: 0 0 4px;
+    }
+
+    .highlight-desc {
+      margin: 0;
+      font-size: 13.5px;
+      line-height: 1.5;
+      color: var(--text-secondary);
+    }
+
+    /* Table of Contents */
+    .toc {
+      background: var(--glass-card);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 18px 22px;
+      margin-bottom: 24px;
+    }
+
+    .toc-title {
+      margin: 0 0 10px;
+      font-size: 12.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--text-muted);
+    }
+
+    .toc-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 8px 18px;
+    }
+
+    .toc-list a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14.5px;
+      color: var(--text-secondary);
+      padding: 2px 0;
+    }
+
+    .toc-list a:hover {
+      color: #FFFFFF;
+    }
+
+    .toc-num {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--aqua-bright);
+      min-width: 20px;
+    }
+
+    /* Policy Sections */
+    .sections {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .policy-card {
+      background: var(--glass-card);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 26px 28px;
+      box-shadow: 0 12px 32px rgba(3, 28, 54, 0.24);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .section-num {
+      width: 30px;
+      height: 30px;
+      border-radius: 9px;
+      background: var(--aqua-soft);
+      border: 1px solid var(--border-strong);
+      color: var(--aqua-bright);
+      font-size: 14px;
+      font-weight: 700;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 20.5px;
+      line-height: 1.3;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+
+    p {
+      margin: 0 0 12px;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    ul.clean-list {
+      margin: 10px 0 12px;
+      padding-left: 20px;
+    }
+
+    ul.clean-list li {
+      margin-bottom: 8px;
+    }
+
+    ul.clean-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    strong {
+      color: var(--text-primary);
+    }
+
+    /* Callouts */
+    .callout {
+      margin-top: 14px;
+      padding: 14px 16px;
+      border-radius: var(--radius-md);
+      background: var(--aqua-soft);
+      border: 1px solid var(--border-strong);
+      font-size: 14.5px;
+      color: #F0F9FF;
+    }
+
+    .callout-pink {
+      background: var(--axolotl-soft);
+      border-color: rgba(249, 168, 212, 0.34);
+      color: #FDF2F8;
+    }
+
+    /* Permissions Grid */
+    .perm-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .perm-item {
+      background: var(--glass-inner);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+    }
+
+    .perm-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 6px;
+    }
+
+    .perm-name {
+      font-weight: 700;
+      color: var(--text-primary);
+      font-size: 15px;
+    }
+
+    .perm-tag {
+      font-size: 12px;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 999px;
+      background: var(--aqua-soft);
+      color: var(--aqua-bright);
+      border: 1px solid var(--border-strong);
+    }
+
+    .perm-desc {
+      margin: 0;
+      font-size: 14.5px;
+      color: var(--text-secondary);
+    }
+
+    /* Contact Box */
+    .contact-box {
+      margin-top: 14px;
+      background: var(--glass-inner);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 12px;
+      align-items: baseline;
+    }
+
+    .contact-key {
+      min-width: 135px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .contact-val {
+      font-weight: 600;
+      color: var(--text-primary);
+      word-break: break-word;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 32px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 13.5px;
+      color: var(--text-muted);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 640px) {
+      .topbar-inner {
+        padding: 10px 14px;
+      }
+
+      .pkg-badge {
+        display: none;
+      }
+
+      .container {
+        padding: 20px 14px 48px;
+      }
+
+      .hero {
+        padding: 22px 18px;
+        border-radius: 18px;
+      }
+
+      .meta-grid,
+      .highlights {
+        grid-template-columns: 1fr;
+      }
+
+      .policy-card {
+        padding: 20px 18px;
+        border-radius: 18px;
+      }
+
+      h2 {
+        font-size: 18.5px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M12 2.8C12 2.8 5.4 10.1 5.4 14.8C5.4 18.55 8.35 21.5 12 21.5C15.65 21.5 18.6 18.55 18.6 14.8C18.6 10.1 12 2.8 12 2.8Z"
+              fill="url(#dropGrad)"
+              stroke="#E0F2FE"
+              stroke-width="1.5"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M9.3 15.2C9.3 16.9 10.5 18.1 12.1 18.3"
+              stroke="#F9A8D4"
+              stroke-width="1.7"
+              stroke-linecap="round"
+            />
+            <defs>
+              <linearGradient id="dropGrad" x1="12" y1="3" x2="12" y2="21.5" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#BAE6FD" />
+                <stop offset="1" stop-color="#38BDF8" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">HydroTick</span>
+          <span class="pkg-badge">com.turan.hydrotick</span>
+        </div>
+      </div>
+
+      <div class="lang-toggle" role="group" aria-label="Language switch">
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" class="lang-btn" data-lang="tr" aria-pressed="false">TR</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="lang-en">
+        <span class="eyebrow">Privacy First · 100% Offline</span>
+        <h1>Privacy Policy</h1>
+        <p class="hero-subtitle">
+          HydroTick is designed as a calm, offline-first water tracker. Your hydration logs, profile preferences, streaks, and aquarium habitat stay exclusively on your device — never uploaded, tracked, or sold.
+        </p>
+        <div class="meta-grid">
+          <div class="meta-item">
+            <span class="meta-label">Application</span>
+            <span class="meta-value">HydroTick (<code>com.turan.hydrotick</code>)</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Effective Date</span>
+            <span class="meta-value">November 26, 2026</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Developer</span>
+            <span class="meta-value">Turan Şimşek</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Data Architecture</span>
+            <span class="meta-value">100% On-Device (No Servers)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="lang-tr" hidden>
+        <span class="eyebrow">Önce Gizlilik · %100 Çevrimdışı</span>
+        <h1>Gizlilik Politikası</h1>
+        <p class="hero-subtitle">
+          HydroTick, tamamen çevrimdışı (offline-first) çalışan sade bir su takip uygulamasıdır. Tüm su kayıtlarınız, profil tercihleriniz, serileriniz ve akvaryum habitatınız yalnızca cihazınızda saklanır; hiçbir sunucuya gönderilmez, izlenmez veya paylaşılmaz.
+        </p>
+        <div class="meta-grid">
+          <div class="meta-item">
+            <span class="meta-label">Uygulama</span>
+            <span class="meta-value">HydroTick (<code>com.turan.hydrotick</code>)</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Yürürlük Tarihi</span>
+            <span class="meta-value">26 Kasım 2026</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Geliştirici</span>
+            <span class="meta-value">Turan Şimşek</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Veri Mimarisi</span>
+            <span class="meta-value">%100 Cihaz İçi (Sunucusuz)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Highlights -->
+    <section class="highlights" aria-label="Privacy highlights">
+      <div class="highlight-card">
+        <div class="lang-en">
+          <p class="highlight-title">No Account Required</p>
+          <p class="highlight-desc">Start tracking right away without signing up, creating a profile, or sharing an email.</p>
+        </div>
+        <div class="lang-tr" hidden>
+          <p class="highlight-title">Hesap Gerekmez</p>
+          <p class="highlight-desc">Kayıt olmadan, hesap açmadan ve e-posta paylaşmadan hemen kullanmaya başlayabilirsiniz.</p>
+        </div>
+      </div>
+
+      <div class="highlight-card">
+        <div class="lang-en">
+          <p class="highlight-title">Zero Tracking &amp; Ads</p>
+          <p class="highlight-desc">No third-party analytics, advertising SDKs, telemetry, or external data collection.</p>
+        </div>
+        <div class="lang-tr" hidden>
+          <p class="highlight-title">Sıfır Takip &amp; Reklam</p>
+          <p class="highlight-desc">Üçüncü taraf analitik, reklam SDK'sı, telemetri veya dış veri toplama bulunmaz.</p>
+        </div>
+      </div>
+
+      <div class="highlight-card">
+        <div class="lang-en">
+          <p class="highlight-title">Full Local Control</p>
+          <p class="highlight-desc">Export a backup anytime or permanently wipe all history with one tap inside the app.</p>
+        </div>
+        <div class="lang-tr" hidden>
+          <p class="highlight-title">Tam Yerel Kontrol</p>
+          <p class="highlight-desc">Verilerinizi dilediğinizde dışa aktarabilir veya uygulama içinden tek dokunuşla sıfırlayabilirsiniz.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Table of Contents -->
+    <nav class="toc" aria-label="Table of contents">
+      <div class="lang-en">
+        <p class="toc-title">Contents</p>
+        <ol class="toc-list">
+          <li><a href="#overview"><span class="toc-num">01</span>Overview &amp; Offline-First Design</a></li>
+          <li><a href="#local-data"><span class="toc-num">02</span>Data Stored Locally on Your Device</a></li>
+          <li><a href="#permissions"><span class="toc-num">03</span>App Permissions</a></li>
+          <li><a href="#third-party"><span class="toc-num">04</span>Third-Party Services &amp; Backups</a></li>
+          <li><a href="#deletion"><span class="toc-num">05</span>Data Retention &amp; Deletion</a></li>
+          <li><a href="#children"><span class="toc-num">06</span>Children's Privacy</a></li>
+          <li><a href="#changes"><span class="toc-num">07</span>Changes to This Policy</a></li>
+          <li><a href="#contact"><span class="toc-num">08</span>Contact Us</a></li>
+        </ol>
+      </div>
+      <div class="lang-tr" hidden>
+        <p class="toc-title">İçindekiler</p>
+        <ol class="toc-list">
+          <li><a href="#overview"><span class="toc-num">01</span>Genel Bakış ve Çevrimdışı Mimari</a></li>
+          <li><a href="#local-data"><span class="toc-num">02</span>Cihazınızda Yerel Olarak Saklanan Veriler</a></li>
+          <li><a href="#permissions"><span class="toc-num">03</span>Uygulama İzinleri</a></li>
+          <li><a href="#third-party"><span class="toc-num">04</span>Üçüncü Taraf Hizmetler ve Yedekleme</a></li>
+          <li><a href="#deletion"><span class="toc-num">05</span>Veri Saklama ve Silme</a></li>
+          <li><a href="#children"><span class="toc-num">06</span>Çocukların Gizliliği</a></li>
+          <li><a href="#changes"><span class="toc-num">07</span>Gizlilik Politikası Değişiklikleri</a></li>
+          <li><a href="#contact"><span class="toc-num">08</span>İletişim</a></li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- Policy Sections -->
+    <div class="sections">
+      <!-- 1. Overview -->
+      <section class="policy-card" id="overview">
+        <div class="lang-en">
+          <div class="section-head">
+            <span class="section-num">1</span>
+            <h2>Overview &amp; Offline-First Design</h2>
+          </div>
+          <p>
+            This Privacy Policy explains how <strong>HydroTick</strong> (<code>com.turan.hydrotick</code>), developed by <strong>Turan Şimşek</strong>, handles your information.
+          </p>
+          <p>
+            HydroTick operates completely <strong>offline-first</strong>. We do not operate backend servers, user databases, or cloud storage for your hydration data. We do not collect, transmit, sell, rent, or share any personal information.
+          </p>
+          <div class="callout">
+            <strong>In short:</strong> Everything you log in HydroTick stays on your phone and never leaves your device unless you explicitly choose to share a manual backup.
+          </div>
+        </div>
+
+        <div class="lang-tr" hidden>
+          <div class="section-head">
+            <span class="section-num">1</span>
+            <h2>Genel Bakış ve Çevrimdışı Mimari</h2>
+          </div>
+          <p>
+            Bu Gizlilik Politikası, <strong>Turan Şimşek</strong> tarafından geliştirilen <strong>HydroTick</strong> (<code>com.turan.hydrotick</code>) uygulamasının bilgilerinizi nasıl işlediğini açıklar.
+          </p>
+          <p>
+            HydroTick tamamen <strong>çevrimdışı (offline-first)</strong> çalışır. Su tüketimi veya profil verileriniz için herhangi bir sunucu, kullanıcı veritabanı veya bulut depolama sistemi kullanmıyoruz. Hiçbir kişisel veriyi toplamıyor, iletmiyor, satmıyor veya üçüncü taraflarla paylaşmıyoruz.
+          </p>
+          <div class="callout">
+            <strong>Kısacası:</strong> HydroTick'e girdiğiniz her bilgi yalnızca telefonunuzda kalır; siz manuel yedek paylaşmadığınız sürece cihazınızdan dışarı çıkmaz.
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Local Data -->
+      <section class="policy-card" id="local-data">
+        <div class="lang-en">
+          <div class="section-head">
+            <span class="section-num">2</span>
+            <h2>Data Stored Locally on Your Device</h2>
+          </div>
+          <p>
+            To provide personalized hydration tracking, HydroTick saves the following information exclusively in your device's local storage (<code>AsyncStorage</code>):
+          </p>
+          <ul class="clean-list">
+            <li><strong>Hydration Logs:</strong> Drink entries, beverage types, container sizes, amounts, and timestamps.</li>
+            <li><strong>Profile &amp; Goal Inputs:</strong> Optional weight, height, activity level, climate setting, and your recommended or custom daily water goal.</li>
+            <li><strong>Progress &amp; Gamification:</strong> Daily streaks, unlocked achievement badges, and aquarium habitat items/preferences.</li>
+            <li><strong>App &amp; Reminder Preferences:</strong> Local reminder intervals, wake/sleep schedule, smart mute setting, language, unit (<code>ml</code> / <code>fl oz</code>), time format, and haptics toggle.</li>
+          </ul>
+          <p>
+            This data is never transmitted to our servers or any third party.
+          </p>
+        </div>
+
+        <div class="lang-tr" hidden>
+          <div class="section-head">
+            <span class="section-num">2</span>
+            <h2>Cihazınızda Yerel Olarak Saklanan Veriler</h2>
+          </div>
+          <p>
+            Kişiselleştirilmiş su takibi sunabilmek için HydroTick yalnızca cihazınızın yerel depolama alanında (<code>AsyncStorage</code>) şu bilgileri saklar:
+          </p>
+          <ul class="clean-list">
+            <li><strong>Su ve İçecek Kayıtları:</strong> İçecek türleri, kap boyutları, miktarlar ve kayıt saatleri.</li>
+            <li><strong>Profil ve Hedef Bilgileri:</strong> İsteğe bağlı kilo, boy, aktivite düzeyi, iklim seçimi ve otomatik hesaplanan veya elle belirlenen günlük su hedefi.</li>
+            <li><strong>İlerleme ve Oyunlaştırma:</strong> Günlük seri (streak) sayısı, kazanılan rozetler ve akvaryum habitat öğeleri/tercihleri.</li>
+            <li><strong>Uygulama ve Hatırlatıcı Tercihleri:</strong> Yerel bildirim aralığı, uyanma/uyku saatleri, akıllı sessize alma ayarı, dil, ölçü birimi (<code>ml</code> / <code>fl oz</code>), saat formatı ve titreşim tercihi.</li>
+          </ul>
+          <p>
+            Bu veriler hiçbir sunucuya veya üçüncü tarafa gönderilmez.
+          </p>
+        </div>
+      </section>
+
+      <!-- 3. Permissions -->
+      <section class="policy-card" id="permissions">
+        <div class="lang-en">
+          <div class="section-head">
+            <span class="section-num">3</span>
+            <h2>App Permissions</h2>
+          </div>
+          <p>
+            HydroTick follows a strict minimal-permission approach and does not request access to your location, camera, microphone, contacts, or files.
+          </p>
+          <div class="perm-list">
+            <div class="perm-item">
+              <div class="perm-top">
+                <span class="perm-name"><code>POST_NOTIFICATIONS</code> (Local Hydration Reminders)</span>
+                <span class="perm-tag">Optional</span>
+              </div>
+              <p class="perm-desc">
+                Used solely to deliver local, on-device water reminder notifications at the intervals and active hours you choose. Reminders are scheduled locally by your device and do not use push notification servers or remote tokens. You can disable or revoke this permission at any time from HydroTick or your device settings.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lang-tr" hidden>
+          <div class="section-head">
+            <span class="section-num">3</span>
+            <h2>Uygulama İzinleri</h2>
+          </div>
+          <p>
+            HydroTick en az izin ilkesini benimser; konum, kamera, mikrofon, rehber veya dosya erişimi istemez.
+          </p>
+          <div class="perm-list">
+            <div class="perm-item">
+              <div class="perm-top">
+                <span class="perm-name"><code>POST_NOTIFICATIONS</code> (Yerel Su Hatırlatıcıları)</span>
+                <span class="perm-tag">İsteğe Bağlı</span>
+              </div>
+              <p class="perm-desc">
+                Yalnızca seçtiğiniz aralık ve aktif saatlerde cihaz içi yerel su içme hatırlatıcıları göstermek için kullanılır. Bildirimler tamamen cihazınızda planlanır; uzak bildirim sunucusu veya push token kullanılmaz. Bu izni dilediğiniz zaman HydroTick içinden veya telefon ayarlarından kapatabilirsiniz.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Third-Party Services -->
+      <section class="policy-card" id="third-party">
+        <div class="lang-en">
+          <div class="section-head">
+            <span class="section-num">4</span>
+            <h2>Third-Party Services &amp; Backups</h2>
+          </div>
+          <p>
+            HydroTick does <strong>not</strong> integrate any third-party analytics, advertising networks, crash trackers, or social media SDKs.
+          </p>
+          <p>
+            If you voluntarily use the <strong>Export Data</strong> feature under <code>Settings &gt; Data &amp; Privacy</code>, HydroTick generates a JSON summary of your local logs and passes it to your device's native share sheet. Where you save or send that exported file is entirely under your control.
+          </p>
+        </div>
+
+        <div class="lang-tr" hidden>
+          <div class="section-head">
+            <span class="section-num">4</span>
+            <h2>Üçüncü Taraf Hizmetler ve Yedekleme</h2>
+          </div>
+          <p>
+            HydroTick içinde hiçbir üçüncü taraf analitik aracı, reklam ağı, çökme takip servisi veya sosyal medya SDK'sı <strong>bulunmaz</strong>.
+          </p>
+          <p>
+            İsteğe bağlı olarak <code>Ayarlar &gt; Veri &amp; Gizlilik</code> altındaki <strong>Verileri Dışa Aktar</strong> özelliğini kullandığınızda, yerel kayıtlarınızdan bir JSON yedeği oluşturulur ve cihazınızın standart paylaşım menüsüne aktarılır. Bu yedeği nereye kaydedeceğiniz veya göndereceğiniz tamamen sizin kontrolünüzdedir.
+          </p>
+        </div>
+      </section>
+
+      <!-- 5. Data Deletion -->
+      <section class="policy-card" id="deletion">
+        <div class="lang-en">
+          <div class="section-head">
+            <span class="section-num">5</span>
+            <h2>Data Retention &amp; Deletion</h2>
+          </div>
+          <p>
+            Because all data is stored locally on your device, you have complete and immediate control over deleting it:
+          </p>
+          <ul class="clean-list">
+            <li><strong>Reset Hydration History In-App:</strong> Open <code>Settings &gt; Data &amp; Privacy &gt; Reset All History</code> to permanently clear all drink logs and daily totals.</li>
+            <li><strong>Delete All App Data:</strong> Uninstall HydroTick from your device, or clear the app's storage in your device's system settings, to permanently erase every local record, profile value, and preference.</li>
+          </ul>
+          <div class="callout callout-pink">
+            Since no copies exist on external servers, deleted data cannot be recovered by the developer.
+          </div>
+        </div>
+
+        <div class="lang-tr" hidden>
+          <div class="section-head">
+            <span class="section-num">5</span>
+            <h2>Veri Saklama ve Silme</h2>
+          </div>
+          <p>
+            Tüm veriler yalnızca cihazınızda saklandığı için silme işlemi üzerinde anında ve tam kontrole sahipsiniz:
+          </p>
+          <ul class="clean-list">
+            <li><strong>Uygulama İçinden Geçmişi Sıfırlama:</strong> Tüm içecek kayıtlarınızı ve günlük toplamlarınızı kalıcı olarak temizlemek için <code>Ayarlar &gt; Veri &amp; Gizlilik &gt; Tüm Geçmişi Sıfırla</code> adımını kullanabilirsiniz.</li>
+            <li><strong>Tüm Uygulama Verilerini Silme:</strong> HydroTick uygulamasını cihazınızdan kaldırarak veya telefon ayarlarından uygulama verilerini temizleyerek tüm kayıt, profil ve tercihleri kalıcı olarak silebilirsiniz.</li>
+          </ul>
+          <div class="callout callout-pink">
+            Harici sunucularda herhangi bir kopya tutulmadığı için silinen veriler geliştirici tarafından geri getirilemez.
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Children's Privacy -->
+      <section class="policy-card" id="children">
+        <div class="lang-en">
+          <div class="section-head">
+            <span class="section-num">6</span>
+            <h2>Children's Privacy</h2>
+          </div>
+          <p>
+            HydroTick is suitable for general audiences and does not knowingly collect any personal information from anyone, including children under the age of 13 (or the equivalent minimum age in your jurisdiction). All app data remains strictly on the user's device.
+          </p>
+        </div>
+
+        <div class="lang-tr" hidden>
+          <div class="section-head">
+            <span class="section-num">6</span>
+            <h2>Çocukların Gizliliği</h2>
+          </div>
+          <p>
+            HydroTick genel kitleye uygundur ve 13 yaşın altındaki çocuklar (veya ülkenizdeki eşdeğer yaş sınırı) dahil olmak üzere hiç kimseden bilerek kişisel veri toplamaz. Tüm uygulama verileri yalnızca kullanıcının cihazında kalır.
+          </p>
+        </div>
+      </section>
+
+      <!-- 7. Changes -->
+      <section class="policy-card" id="changes">
+        <div class="lang-en">
+          <div class="section-head">
+            <span class="section-num">7</span>
+            <h2>Changes to This Policy</h2>
+          </div>
+          <p>
+            We may update this Privacy Policy from time to time if we add new features, adjust app permissions, or update legal disclosures. Any changes will be posted on this page with an updated <strong>Effective Date</strong> at the top. We encourage you to review this page periodically.
+          </p>
+        </div>
+
+        <div class="lang-tr" hidden>
+          <div class="section-head">
+            <span class="section-num">7</span>
+            <h2>Gizlilik Politikası Değişiklikleri</h2>
+          </div>
+          <p>
+            Yeni özellikler eklendiğinde, uygulama izinleri değiştiğinde veya yasal bilgilendirmeler gerektiğinde bu Gizlilik Politikasını zaman zaman güncelleyebiliriz. Yapılan tüm değişiklikler sayfanın üst kısmındaki <strong>Yürürlük Tarihi</strong> yenilenerek bu sayfada yayımlanır.
+          </p>
+        </div>
+      </section>
+
+      <!-- 8. Contact -->
+      <section class="policy-card" id="contact">
+        <div class="lang-en">
+          <div class="section-head">
+            <span class="section-num">8</span>
+            <h2>Contact Us</h2>
+          </div>
+          <p>
+            If you have any questions, feedback, or privacy requests regarding HydroTick, please contact the developer:
+          </p>
+          <div class="contact-box">
+            <div class="contact-row">
+              <span class="contact-key">Developer</span>
+              <span class="contact-val">Turan Şimşek</span>
+            </div>
+            <div class="contact-row">
+              <span class="contact-key">Application</span>
+              <span class="contact-val">HydroTick (<code>com.turan.hydrotick</code>)</span>
+            </div>
+            <div class="contact-row">
+              <span class="contact-key">Support Email</span>
+              <span class="contact-val"><a href="mailto:turansmsk10@gmail.com">turansmsk10@gmail.com</a></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lang-tr" hidden>
+          <div class="section-head">
+            <span class="section-num">8</span>
+            <h2>İletişim</h2>
+          </div>
+          <p>
+            HydroTick veya bu Gizlilik Politikası ile ilgili her türlü soru, görüş ve talebiniz için geliştiriciyle iletişime geçebilirsiniz:
+          </p>
+          <div class="contact-box">
+            <div class="contact-row">
+              <span class="contact-key">Geliştirici</span>
+              <span class="contact-val">Turan Şimşek</span>
+            </div>
+            <div class="contact-row">
+              <span class="contact-key">Uygulama</span>
+              <span class="contact-val">HydroTick (<code>com.turan.hydrotick</code>)</span>
+            </div>
+            <div class="contact-row">
+              <span class="contact-key">Destek E-postası</span>
+              <span class="contact-val"><a href="mailto:turansmsk10@gmail.com">turansmsk10@gmail.com</a></span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <div class="lang-en">
+        © 2026 Turan Şimşek · HydroTick (Water Tracker) · All processing stays on your device.
+      </div>
+      <div class="lang-tr" hidden>
+        © 2026 Turan Şimşek · HydroTick (Su Takip Uygulaması) · Tüm veriler cihazınızda kalır.
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    (function () {
+      var TITLES = {
+        en: 'Privacy Policy — HydroTick (Water Tracker)',
+        tr: 'Gizlilik Politikası — HydroTick (Su Takip Uygulaması)'
+      };
+      var buttons = document.querySelectorAll('.lang-btn[data-lang]');
+      var enBlocks = document.querySelectorAll('.lang-en');
+      var trBlocks = document.querySelectorAll('.lang-tr');
+
+      function setLanguage(lang) {
+        var resolved = lang === 'tr' ? 'tr' : 'en';
+        document.documentElement.lang = resolved;
+        document.title = TITLES[resolved];
+
+        for (var i = 0; i < enBlocks.length; i++) {
+          enBlocks[i].hidden = resolved !== 'en';
+        }
+        for (var j = 0; j < trBlocks.length; j++) {
+          trBlocks[j].hidden = resolved !== 'tr';
+        }
+        for (var k = 0; k < buttons.length; k++) {
+          var isMatch = buttons[k].getAttribute('data-lang') === resolved;
+          buttons[k].setAttribute('aria-pressed', isMatch ? 'true' : 'false');
+        }
+      }
+
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', function () {
+          setLanguage(this.getAttribute('data-lang'));
+        });
+      }
+
+      var initialLang = 'en';
+      try {
+        var params = new URLSearchParams(window.location.search);
+        if (params.get('lang') === 'tr') {
+          initialLang = 'tr';
+        }
+      } catch (e) {}
+
+      setLanguage(initialLang);
+    })();
+  </script>
+</body>
+</html>
